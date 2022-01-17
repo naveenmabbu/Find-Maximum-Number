@@ -1,19 +1,26 @@
-﻿using FindMaximumNumber;
+﻿
+namespace GenericDemo
+{
+	 class program
+	{
+		static int[] intArray = { 2, 4, 5, 6, 8 };
+		static char[] charArray = { 'H', 'E', 'L', 'L', 'O' };
+		static double[] doubleArray = { 1.1, 3.3, 5.5, 8.7 };
+		static void Main(String[] args)
+		{
+			Display<int>(intArray);
+			Display<char>(charArray);
+			Display<Double>(doubleArray);
+			Console.ReadKey();
 
-Console.WriteLine("Find the Maximum Number : ");
-int output = MaximumNumberCheck.MaximumNumber(25, 15, 13);
-Console.WriteLine(output);
-double doubleoutput = MaximumNumberCheck.MaximumFloatNumber(52.26, 18.92, 15.12);
-Console.WriteLine(doubleoutput);
-string strigoutput = MaximumNumberCheck.MaximumStringNumber("linklist", "shellscript", "visualstudio");
-Console.WriteLine(strigoutput);
-int[] intArray = { 102, 152, 165, 205, 209, 215 };
-GenericMaximum<int> generic = new GenericMaximum<int>(intArray);
-generic.PrintMaxValue();
-double[] doubleArray = { 2.63, 25.36, 52.09, 12.32, 46.15 };
-GenericMaximum<double> genericDouble = new GenericMaximum<double>(doubleArray);
-genericDouble.PrintMaxValue();
-string[] stringArray = { "araqu", "meedaram", "beach", "agra", "ooti" };
-GenericMaximum<string> genericString = new GenericMaximum<string>(stringArray);
-genericString.PrintMaxValue();
-Console.ReadKey();
+			static void Display<T>(T[] test)
+			{
+				for (int i = 0; i < test.Length; i++)
+				{
+					Console.Write(test[i] + " ");
+				}
+				Console.WriteLine();
+			}
+		}
+	}
+}
